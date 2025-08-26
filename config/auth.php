@@ -10,7 +10,7 @@ return [
     | This option defines the default authentication "guard" and password
     | reset "broker" for your application. You may change these values
     | as required, but they're a perfect start for most applications.
-    |
+    |   
     */
 
     'defaults' => [
@@ -40,6 +40,13 @@ return [
             'driver' => 'session',
             'provider' => 'users',
         ],
+
+        'admin' => [
+            'driver' => 'session',
+            'provider' => 'admins',
+        ],
+
+
     ],
 
     /*
@@ -65,10 +72,10 @@ return [
             'model' => env('AUTH_MODEL', App\Models\User::class),
         ],
 
-        // 'users' => [
-        //     'driver' => 'database',
-        //     'table' => 'users',
-        // ],
+        'admins' => [
+            'driver' => 'eloquent',
+            'model' => env('AUTH_MODEL', App\Models\Admin::class),
+        ],
     ],
 
     /*
@@ -94,8 +101,15 @@ return [
         'users' => [
             'provider' => 'users',
             'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
-            'expire' => 60,
-            'throttle' => 60,
+            'expire' => 20,
+            'throttle' => 30,
+        ],
+
+        'admins' => [
+            'provider' => 'admins',
+            'table' => env('AUTH_PASSWORD_RESET_TOKEN_TABLE', 'password_reset_tokens'),
+            'expire' => 20,
+            'throttle' => 30,
         ],
     ],
 

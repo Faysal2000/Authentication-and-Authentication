@@ -10,7 +10,7 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 
 
-class User extends Authenticatable implements MustVerifyEmail
+class Admin extends Authenticatable implements MustVerifyEmail
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -22,12 +22,7 @@ class User extends Authenticatable implements MustVerifyEmail
      */
 
 
-    public function sendPasswordResetNotification($token)
-    {
 
-        $this->notify(new UpdatedEmailNotification($token));
-
-    }
 
 
     protected $fillable = [
