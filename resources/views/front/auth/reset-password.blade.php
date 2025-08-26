@@ -47,8 +47,7 @@
                             {{-- PASSOWRD --}}
 
                             <div class="mb-3 form-password-toggle">
-                                <label class="form-label" for="password"
-                                    :value="__('Confirm Password')">Password</label>
+                                <label class="form-label" for="password" :value="__('Password')">Password</label>
                                 <div class="input-group input-group-merge">
                                     <input type="password" id="password" class="form-control" name="password"
                                         placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
@@ -56,7 +55,6 @@
                                     <span class="input-group-text cursor-pointer"><i class="bx bx-hide"></i></span>
                                 </div>
                                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
-
                             </div>
 
 
