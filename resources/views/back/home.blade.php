@@ -1,7 +1,7 @@
-@extends('front.master')
+@extends('back.master')
 
 
-@section('title', 'Front Home Page')
+@section('title', 'Back Home Page')
 @section('contect')
     <div class="row">
         <div class="col-lg-8 mb-4 order-0">
@@ -20,9 +20,8 @@
                     </div>
                     <div class="col-sm-5 text-center text-sm-left">
                         <div class="card-body pb-0 px-0 px-md-4">
-                            <img src="{{ asset('assets-front/img/illustrations/man-with-laptop-light.png') }}"
-                                height="140" alt="View Badge User"
-                                data-app-dark-img="illustrations/man-with-laptop-dark.png"
+                            <img src="{{ asset('assets-back/img/illustrations/man-with-laptop-light.png') }}" height="140"
+                                alt="View Badge User" data-app-dark-img="illustrations/man-with-laptop-dark.png"
                                 data-app-light-img="illustrations/man-with-laptop-light.png" />
                         </div>
                     </div>
@@ -36,7 +35,7 @@
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    <img src="{{ asset('assets-front/img/icons/unicons/chart-success.png') }}"
+                                    <img src="{{ asset('assets-back/img/icons/unicons/chart-success.png') }}"
                                         alt="chart success" class="rounded" />
                                 </div>
                                 <div class="dropdown">
@@ -61,7 +60,7 @@
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    <img src="{{ asset('assets-front/img/icons/unicons/wallet-info.png') }}"
+                                    <img src="{{ asset('assets-back/img/icons/unicons/wallet-info.png') }}"
                                         alt="Credit Card" class="rounded" />
                                 </div>
                                 <div class="dropdown">
@@ -144,7 +143,7 @@
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    <img src="{{ asset('assets-front/img/icons/unicons/paypal.png') }}" alt="Credit Card"
+                                    <img src="{{ asset('assets-back/img/icons/unicons/paypal.png') }}" alt="Credit Card"
                                         class="rounded" />
                                 </div>
                                 <div class="dropdown">
@@ -169,7 +168,7 @@
                         <div class="card-body">
                             <div class="card-title d-flex align-items-start justify-content-between">
                                 <div class="avatar flex-shrink-0">
-                                    <img src="{{ asset('assets-front/img/icons/unicons/cc-primary.png') }}"
+                                    <img src="{{ asset('assets-back/img/icons/unicons/cc-primary.png') }}"
                                         alt="Credit Card" class="rounded" />
                                 </div>
                                 <div class="dropdown">
@@ -190,7 +189,7 @@
                     </div>
                 </div>
                 <!-- </div>
-                            <div class="row"> -->
+                                                            <div class="row"> -->
                 <div class="col-12 mb-4">
                     <div class="card">
                         <div class="card-body">
@@ -333,7 +332,7 @@
                         <div class="tab-pane fade show active" id="navs-tabs-line-card-income" role="tabpanel">
                             <div class="d-flex p-4 pt-3">
                                 <div class="avatar flex-shrink-0 me-3">
-                                    <img src="{{ asset('assets-front/img/icons/unicons/wallet.png') }}" alt="User" />
+                                    <img src="{{ asset('assets-back/img/icons/unicons/wallet.png') }}" alt="User" />
                                 </div>
                                 <div>
                                     <small class="text-muted d-block">Total Balance</small>
@@ -384,7 +383,7 @@
                     <ul class="p-0 m-0">
                         <li class="d-flex mb-4 pb-1">
                             <div class="avatar flex-shrink-0 me-3">
-                                <img src="{{ asset('assets-front/img/icons/unicons/paypal.png') }}" alt="User"
+                                <img src="{{ asset('assets-back/img/icons/unicons/paypal.png') }}" alt="User"
                                     class="rounded" />
                             </div>
                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
@@ -400,7 +399,7 @@
                         </li>
                         <li class="d-flex mb-4 pb-1">
                             <div class="avatar flex-shrink-0 me-3">
-                                <img src="{{ asset('assets-front/img/icons/unicons/wallet.png') }}" alt="User"
+                                <img src="{{ asset('assets-back/img/icons/unicons/wallet.png') }}" alt="User"
                                     class="rounded" />
                             </div>
                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
@@ -416,7 +415,7 @@
                         </li>
                         <li class="d-flex mb-4 pb-1">
                             <div class="avatar flex-shrink-0 me-3">
-                                <img src="{{ asset('assets-front/img/icons/unicons/chart.png') }}" alt="User"
+                                <img src="{{ asset('assets-back/img/icons/unicons/chart.png') }}" alt="User"
                                     class="rounded" />
                             </div>
                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
@@ -432,7 +431,7 @@
                         </li>
                         <li class="d-flex mb-4 pb-1">
                             <div class="avatar flex-shrink-0 me-3">
-                                <img src="{{ asset('assets-front/img/icons/unicons/cc-success.png') }}" alt="User"
+                                <img src="{{ asset('assets-back/img/icons/unicons/cc-success.png') }}" alt="User"
                                     class="rounded" />
                             </div>
                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
@@ -448,7 +447,7 @@
                         </li>
                         <li class="d-flex mb-4 pb-1">
                             <div class="avatar flex-shrink-0 me-3">
-                                <img src="{{ asset('assets-front/img/icons/unicons/wallet.png') }}" alt="User"
+                                <img src="{{ asset('assets-back/img/icons/unicons/wallet.png') }}" alt="User"
                                     class="rounded" />
                             </div>
                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
@@ -464,7 +463,7 @@
                         </li>
                         <li class="d-flex">
                             <div class="avatar flex-shrink-0 me-3">
-                                <img src="{{ asset('assets-front/img/icons/unicons/cc-warning.png') }}" alt="User"
+                                <img src="{{ asset('assets-back/img/icons/unicons/cc-warning.png') }}" alt="User"
                                     class="rounded" />
                             </div>
                             <div class="d-flex w-100 flex-wrap align-items-center justify-content-between gap-2">
