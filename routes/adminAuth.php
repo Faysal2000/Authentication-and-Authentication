@@ -6,12 +6,6 @@ use App\Http\Controllers\AdminAuth\PasswordResetLinkController;
 use App\Http\Controllers\AdminAuth\RegisteredUserController;
 use Illuminate\Support\Facades\Route;
 
-
-
-
-
-
-
 Route::middleware('guest:admin')->group(function () {
     Route::get('register', [RegisteredUserController::class, 'create'])
         ->name('register');
@@ -36,12 +30,7 @@ Route::middleware('guest:admin')->group(function () {
         ->name('password.store');
 });
 
-
-
-
 Route::middleware('admin')->group(function () {
-
-
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
         ->name('logout');
 });

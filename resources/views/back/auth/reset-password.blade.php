@@ -7,7 +7,7 @@
 <html lang="en" class="light-style customizer-hide" dir="ltr" data-theme="theme-default"
     data-assets-path="../assets/" data-template="vertical-menu-template-free">
 
-@include('front.partials.authHead')
+@include('back.partials.authHead')
 
 <body>
     <!-- Content -->
@@ -20,14 +20,14 @@
                 <div class="card">
                     <div class="card-body">
                         <!-- Logo -->
-                        @include('front.partials.authLogo')
+                        @include('back.partials.authLogo')
                         <!-- /Logo -->
                         <h4 class="mb-2">Reset Password 🔒</h4>
 
 
                         <x-auth-session-status class="mb-4" :status="session('status')" />
 
-                        <form id="formAuthentication" class="mb-3" action="{{ route('password.store') }}"
+                        <form id="formAuthentication" class="mb-3" action="{{ route('back.password.store') }}"
                             method="POST">
                             @csrf
 
@@ -82,7 +82,8 @@
 
 
                         <div class="text-center">
-                            <a href="{{ route('login') }}" class="d-flex align-items-center justify-content-center">
+                            <a href="{{ route('back.login') }}"
+                                class="d-flex align-items-center justify-content-center">
                                 <i class="bx bx-chevron-left scaleX-n1-rtl bx-sm"></i>
                                 Back to login
                             </a>
@@ -97,7 +98,7 @@
 
     <!-- / Content -->
 
-    @include('front.partials.authScripts')
+    @include('back.partials.authScripts')
 </body>
 
 </html>
