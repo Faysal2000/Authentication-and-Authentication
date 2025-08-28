@@ -20,6 +20,9 @@ use App\Http\Controllers\Back\BackHomeController;
 */
 
 
+
+
+
 // FRONT DESIGN 
 Route::prefix('front')->name('front.')->group(function () {
     Route::get('/', FrontHomeController::class)->middleware('auth')->name('index');

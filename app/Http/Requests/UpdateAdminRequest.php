@@ -25,10 +25,10 @@ class UpdateAdminRequest extends FormRequest
     {
         $id = $this->route()->admin->id ?? null;
         return [
-            'name' => 'required|string',
-            'email' => 'required|email|unique:admins,email,' . $id,
+            'name'     => 'required|string',
+            'email'    => 'required|email|unique:admins,email,'.$id,
             'password' => 'nullable|min:5|confirmed',
-            'role' => 'nullable',
+            'role'     => 'nullable',
         ];
     }
 
@@ -39,11 +39,11 @@ class UpdateAdminRequest extends FormRequest
      */
     public function attributes()
     {
-        return [
-            'name' => __('lang.name'),
-            'email' => __('lang.email'),
+        return [            
+            'name'     => __('lang.name'),
+            'email'    => __('lang.email'),
             'password' => __('lang.password'),
-            'role' => __('lang.role'),
+            'role'     => __('lang.role'),
         ];
     }
 }

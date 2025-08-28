@@ -1,5 +1,5 @@
 @extends('back.master')
-@section('title', __('Admin Page-Users'))
+@section('title', __('lang.users'))
 @section('users_active', 'active bg-light')
 @includeIf("$directory.pushStyles")
 

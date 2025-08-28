@@ -24,10 +24,10 @@ class StoreAdminRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
-            'email' => 'required|email|unique:admins,email',
+            'name'     => 'required|string',
+            'email'    => 'required|email|unique:admins,email',
             'password' => 'required|min:5|confirmed',
-            'role' => 'nullable',
+            'role'     => 'nullable',
         ];
     }
 
@@ -38,11 +38,11 @@ class StoreAdminRequest extends FormRequest
      */
     public function attributes()
     {
-        return [
-            'name' => __('lang.name'),
-            'email' => __('lang.email'),
+        return [            
+            'name'     => __('lang.name'),
+            'email'    => __('lang.email'),
             'password' => __('lang.password'),
-            'role' => __('lang.role'),
+            'role'     => __('lang.role'),
         ];
     }
 }

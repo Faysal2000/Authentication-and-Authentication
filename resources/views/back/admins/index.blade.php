@@ -40,68 +40,66 @@
                     </thead>
 
                     <tbody>
-                        @if ($data->count() > 0)
-                            @foreach ($data as $item)
-                                <tr>
-                                    {{-- <td>{{ $data['data']->firstItem() + $loop->index }}</td> --}}
-                                    <td>{{ $item->name }}</td>
-                                    <td>{{ $item->email }}</td>
-                                    <td>
-                                        @if (count($item->getRoleNames()) > 0)
-                                            <span class="badge bg-warning text-white p-2">
-                                                {{ $item->getRoleNames()[0] ?? '' }}
-                                            </span>
-                                        @endif
-                                    </td>
-                                    <td>
-                                        <div class="btn-group">
-                                            <button class="btn btn-primary dropdown-toggle btn-sm" type="button"
-                                                data-bs-toggle="dropdown" aria-expanded="false">
-                                                {{ __('lang.actions') }} <i class="mdi mdi-chevron-down"></i>
-                                            </button>
-                                            <div class="dropdown-menu">
+                        {{-- @if (count($data['data']) > 0) --}}
+                        @foreach ($data['data'] as $key => $item)
+                            <tr>
+                                <td>{{ $data['data']->firstItem() + $loop->index }}</td>
+                                <td>{{ $item->name }}</td>
+                                <td>{{ $item->email }}</td>
+                                <td>
+                                    @if (count($item->getRoleNames()) > 0)
+                                        <span class="badge bg-warning text-white p-2">
+                                            {{ $item->getRoleNames()[0] ?? '' }}
+                                        </span>
+                                    @endif
+                                </td>
+                                <td>
+                                    <div class="btn-group">
+                                        <button class="btn btn-primary dropdown-toggle btn-sm" type="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            {{ __('lang.actions') }} <i class="mdi mdi-chevron-down"></i>
+                                        </button>
+                                        <div class="dropdown-menu">
 
-                                                <a href="{{ route('back.admins.show', ['admin' => $item]) }}"
-                                                    class="dropdown-item displayClass"
-                                                    data-title="{{ __('lang.show_admin') }}" data-bs-toggle="modal"
-                                                    data-bs-target="#mainModal">
-                                                    <span class="bx bx-show-alt"></span>
-                                                    {{ __('lang.show') }}
-                                                </a>
+                                            <a href="{{ route('back.admins.show', ['admin' => $item]) }}"
+                                                class="dropdown-item displayClass" data-title="{{ __('lang.show_admin') }}"
+                                                data-bs-toggle="modal" data-bs-target="#mainModal">
+                                                <span class="bx bx-show-alt"></span>
+                                                {{ __('lang.show') }}
+                                            </a>
 
-                                                {{-- @if (permission(['edit_admins'])) --}}
-                                                <a href="{{ route('back.admins.edit', ['admin' => $item]) }}"
-                                                    class="dropdown-item editClass"
-                                                    data-title="{{ __('lang.edit_admin') }}" data-bs-toggle="modal"
-                                                    data-bs-target="#mainModal">
-                                                    <span class="bx bx-edit-alt"></span>
-                                                    {{ __('lang.edit') }}
-                                                </a>
-                                                {{-- @endif --}}
+                                            {{-- @if (permission(['edit_admins'])) --}}
+                                            <a href="{{ route('back.admins.edit', ['admin' => $item]) }}"
+                                                class="dropdown-item editClass" data-title="{{ __('lang.edit_admin') }}"
+                                                data-bs-toggle="modal" data-bs-target="#mainModal">
+                                                <span class="bx bx-edit-alt"></span>
+                                                {{ __('lang.edit') }}
+                                            </a>
+                                            {{-- @endif --}}
 
-                                                {{-- @if (permission(['delete_admins'])) --}}
-                                                <a class="dropdown-item deleteClass"
-                                                    href="{{ route('back.admins.destroy', ['admin' => $item]) }}"
-                                                    data-title="{{ __('lang.delete_admin') }}" data-bs-toggle="modal"
-                                                    data-bs-target="#deleteModal">
-                                                    <span class="bx bx-trash-alt"></span>
-                                                    {{ __('lang.delete') }}
-                                                </a>
-                                                {{-- @endif --}}
+                                            {{-- @if (permission(['delete_admins'])) --}}
+                                            <a class="dropdown-item deleteClass"
+                                                href="{{ route('back.admins.destroy', ['admin' => $item]) }}"
+                                                data-title="{{ __('lang.delete_admin') }}" data-bs-toggle="modal"
+                                                data-bs-target="#deleteModal">
+                                                <span class="bx bx-trash-alt"></span>
+                                                {{ __('lang.delete') }}
+                                            </a>
+                                            {{-- @endif --}}
 
-                                            </div>
                                         </div>
-                                    </td>
-                                </tr>
-                            @endforeach
-                        @else
-                            <x-empty-alert></x-empty-alert>
-                        @endif
+                                    </div>
+                                </td>
+                            </tr>
+                        @endforeach
+                        {{-- @else --}}
+                        <x-empty-alert></x-empty-alert>
+                        {{-- @endif --}}
                     </tbody>
                 </table>
             </div>
 
-            {{-- {{ $data['data']->appends(request()->query())->render('pagination::bootstrap-4') }} --}}
+            {{ $data['data']->appends(request()->query())->render('pagination::bootstrap-4') }}
 
         </div>
     </div>

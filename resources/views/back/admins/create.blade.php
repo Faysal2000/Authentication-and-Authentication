@@ -12,7 +12,7 @@
         </div>
 
         <div class="form-group col-md-6">
-            <label class="form-label">{{ __('lang.email') }}</label>
+            <label class="form-label">{{ __('email') }}</label>
             <input type="email" class="border form-control" name="email"
                 placeholder="{{ __('lang.please_enter') }} {{ __('lang.email') }}...">
         </div>

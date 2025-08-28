@@ -24,10 +24,8 @@ class RoleController extends Controller
     /**
      * Display a listing of the resource.
      *
-
- * @return \Illuminate\Contracts\View\View
- */
-
+     * @return \Illuminate\Http\Response
+     */
     public function index(Request $request)
     {
         $data = $this->getData($request->all());
@@ -43,7 +41,7 @@ class RoleController extends Controller
     {
         $order = $data['order'] ?? 'created_at';
         $sort = $data['sort'] ?? 'desc';
-        $perpage = $data['perpage'] ?? 10;
+        $perpage = $data['perpage'] ?? \config('app.paginate');
         $start = $data['start'] ?? null;
         $end = $data['end'] ?? null;
         $word = $data['word'] ?? null;
@@ -65,9 +63,9 @@ class RoleController extends Controller
 
     /**
      * Show the form for creating a new resource.
-
- * @return \Illuminate\Http\JsonResponse
- */
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
         $groups = Permission::where('guard_name', 'admin')->get();

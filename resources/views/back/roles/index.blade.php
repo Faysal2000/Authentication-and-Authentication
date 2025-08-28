@@ -1,5 +1,5 @@
 @extends('back.master')
-@section('title', __('Roles'))
+@section('title', __('lang.roles'))
 @section('roles_active', 'active bg-light')
 @includeIf("$directory.pushStyles")
 
@@ -50,32 +50,29 @@
                                             </button>
                                             <div class="dropdown-menu">
 
-                                                {{-- عرض Role --}}
                                                 <a href="{{ route('back.roles.show', ['role' => $item]) }}"
                                                     class="dropdown-item">
                                                     <span class="bx bx-show-alt"></span>
                                                     {{ __('lang.show') }}
                                                 </a>
 
-                                                {{-- تعديل Role --}}
-                                                @can('edit_roles')
-                                                    <a href="{{ route('back.roles.edit', ['role' => $item]) }}"
-                                                        class="dropdown-item">
-                                                        <span class="bx bx-edit-alt"></span>
-                                                        {{ __('lang.edit') }}
-                                                    </a>
-                                                @endcan
+                                                {{-- @if (permission(['edit_roles'])) --}}
+                                                <a href="{{ route('back.roles.edit', ['role' => $item]) }}"
+                                                    class="dropdown-item">
+                                                    <span class="bx bx-edit-alt"></span>
+                                                    {{ __('lang.edit') }}
+                                                </a>
+                                                {{-- @endif --}}
 
-                                                {{-- حذف Role --}}
-                                                @can('delete_roles')
-                                                    <a class="dropdown-item deleteClass"
-                                                        href="{{ route('back.roles.destroy', ['role' => $item]) }}"
-                                                        data-title="{{ __('lang.delete_role') }}" data-bs-toggle="modal"
-                                                        data-bs-target="#deleteModal">
-                                                        <span class="bx bx-trash-alt"></span>
-                                                        {{ __('lang.delete') }}
-                                                    </a>
-                                                @endcan
+                                                {{-- @if (permission(['delete_roles'])) --}}
+                                                <a class="dropdown-item deleteClass"
+                                                    href="{{ route('back.roles.destroy', ['role' => $item]) }}"
+                                                    data-title="{{ __('lang.delete_role') }}" data-bs-toggle="modal"
+                                                    data-bs-target="#deleteModal">
+                                                    <span class="bx bx-trash-alt"></span>
+                                                    {{ __('lang.delete') }}
+                                                </a>
+                                                {{-- @endif --}}
 
                                             </div>
                                         </div>
@@ -89,8 +86,7 @@
                 </table>
             </div>
 
-
-            {{ $data['data']->appends(request()->query())->render('pagination::bootstrap-5') }}
+            {{ $data['data']->appends(request()->query())->render('pagination::bootstrap-4') }}
 
         </div>
     </div>

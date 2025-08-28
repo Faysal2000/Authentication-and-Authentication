@@ -24,9 +24,9 @@ class StoreUserRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required|string',
-            'email' => 'required|email|unique:users,email',
-            'password' => 'sometimes|required|min:5|confirmed',
+            'name'           => 'required|string',
+            'email'          => 'required|email|unique:users,email',
+            'password'       => 'sometimes|required|min:5|confirmed',
         ];
     }
 
@@ -37,10 +37,10 @@ class StoreUserRequest extends FormRequest
      */
     public function attributes()
     {
-        return [
-            'name' => __('lang.name'),
-            'email' => __('lang.email'),
-            'password' => __('lang.password'),
+        return [            
+            'name'           => __('lang.name'),
+            'email'          => __('lang.email'),
+            'password'       => __('lang.password'),
         ];
     }
 }

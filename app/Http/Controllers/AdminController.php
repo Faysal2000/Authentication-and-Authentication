@@ -32,26 +32,24 @@ class AdminController extends Controller
     public function index(Request $request)
     {
         $data = $this->getData($request->all());
-        return view(self::DIRECTORY . ".index", compact('data'))
-            ->with('directory', self::DIRECTORY);
+        return view(self::DIRECTORY . ".index", \get_defined_vars())->with('directory', self::DIRECTORY);
     }
-
 
     /**
      * Get data.
      *
      * @return \Illuminate\Http\Response
      */
-    public function getData($filters)
+    public function getData($data)
     {
-        $order = $filters['order'] ?? 'created_at';
-        $sort = $filters['sort'] ?? 'desc';
-        $perpage = $filters['perpage'] ?? \config('app.paginate');
-        $start = $filters['start'] ?? null;
-        $end = $filters['end'] ?? null;
-        $word = $filters['word'] ?? null;
+        $order = $data['order'] ?? 'created_at';
+        $sort = $data['sort'] ?? 'desc';
+        $perpage = $data['perpage'] ?? \config('app.paginate');
+        $start = $data['start'] ?? null;
+        $end = $data['end'] ?? null;
+        $word = $data['word'] ?? null;
 
-        return Admin::when($word != null, function ($q) use ($word) {
+        $data = Admin::when($word != null, function ($q) use ($word) {
             $q->where('name', 'like', '%' . $word . '%')
                 ->orWhere('email', 'like', '%' . $word . '%');
         })
@@ -61,10 +59,10 @@ class AdminController extends Controller
             ->when($end != null, function ($q) use ($end) {
                 $q->whereDate('created_at', '<=', $end);
             })
-            ->orderBy($order, $sort)
-            ->paginate($perpage);
-    }
+            ->orderby($order, $sort)->paginate($perpage);
 
+        return \get_defined_vars();
+    }
 
 
     /**

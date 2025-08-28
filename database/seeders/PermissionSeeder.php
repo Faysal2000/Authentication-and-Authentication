@@ -14,16 +14,14 @@ class PermissionSeeder extends Seeder
     public function run(): void
     {
         $permissions = [
-
-            'add_doctor',
-            'show_doctor',
-            'edit_doctor',
-            'delete_doctor',
+            'add_user',
+            'show_user',
+            'edit_user',
+            'delete_user',
         ];
 
         foreach ($permissions as $permission) {
-
-            Permission::updateOrCreate([
+            Permission::updateOrCreate(['name' => $permission], [
                 'name' => $permission,
                 'guard_name' => 'admin',
             ]);

@@ -25,7 +25,7 @@ class RoleRequest extends FormRequest
     {
         $id = $this->route()->role->id ?? null;
         return [
-            'name' => 'required|string|unique:roles,name,' . $id,
+            'name' => 'required|string|unique:roles,name,'.$id,
             'permissionArray.*' => 'nullable',
         ];
     }
@@ -38,7 +38,7 @@ class RoleRequest extends FormRequest
     public function attributes()
     {
         return [
-            'name' => __('lang.name'),
+            'name'            => __('lang.name'),
             'permissionArray' => __('lang.permissions'),
         ];
     }
