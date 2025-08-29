@@ -45,6 +45,6 @@ class RegisteredUserController extends Controller
 
         Auth::guard('admin')->login($admin);
 
-        return redirect('back.index');
+        return redirect('back.admins.index');
     }
 }

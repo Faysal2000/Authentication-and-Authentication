@@ -92,9 +92,8 @@
                                 </td>
                             </tr>
                         @endforeach
-                        {{-- @else --}}
+
                         <x-empty-alert></x-empty-alert>
-                        {{-- @endif --}}
                     </tbody>
                 </table>
             </div>
